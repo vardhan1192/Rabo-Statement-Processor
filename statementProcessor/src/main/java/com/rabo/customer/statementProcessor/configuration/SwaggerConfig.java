@@ -16,23 +16,19 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
-	
-	private static final Contact DEFAULT_CONTACT = new Contact(
-			"Vishnu","","vardhan1192@gmail.com");
-	
-	private static final ApiInfo DEFAULT_API_INFO = new ApiInfo(
-			"Rabo Customer Statement Processor","Rabo Customer Statement Processor","1.0",
-			"urn:tos",DEFAULT_CONTACT,
-			"Apache 2.0","http://www.apache.org/licenses/LICENSE-2.0");
 
-	private static final Set<String> DEFAULT_PRODUCES_AND_CONSUMES = 
-			new HashSet<String>(Arrays.asList("application/json")) ;
+	private static final Contact DEFAULT_CONTACT = new Contact("Vishnu", "", "vardhan1192@gmail.com");
+
+	private static final ApiInfo DEFAULT_API_INFO = new ApiInfo("Rabo Customer Statement Processor",
+			"Rabo Customer Statement Processor", "1.0", "urn:tos", DEFAULT_CONTACT, "Apache 2.0",
+			"http://www.apache.org/licenses/LICENSE-2.0");
+
+	private static final Set<String> DEFAULT_PRODUCES_AND_CONSUMES = new HashSet<String>(
+			Arrays.asList("application/json"));
 
 	@Bean
 	public Docket api() {
-		return new Docket(DocumentationType.SWAGGER_2)
-				.apiInfo(DEFAULT_API_INFO)
-				.produces(DEFAULT_PRODUCES_AND_CONSUMES)
+		return new Docket(DocumentationType.SWAGGER_2).apiInfo(DEFAULT_API_INFO).produces(DEFAULT_PRODUCES_AND_CONSUMES)
 				.consumes(DEFAULT_PRODUCES_AND_CONSUMES);
 	}
 
