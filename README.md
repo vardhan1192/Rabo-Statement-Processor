@@ -18,3 +18,5 @@ To Run the program (In Eclipse or STS):
 4. Select the project which is listed and clcik finish.
 
 5. Once the project is imported, right click on the project select Run As -> Spring Boot App
+
+6. For the documentation, please visit http://localhost:8080/processStatement/v2/api-docs
