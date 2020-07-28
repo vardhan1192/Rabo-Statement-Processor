@@ -8,7 +8,6 @@ public class RaboCustomerStatementProcessorApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(RaboCustomerStatementProcessorApplication.class, args);
-	
-	}
 
+	}
 }

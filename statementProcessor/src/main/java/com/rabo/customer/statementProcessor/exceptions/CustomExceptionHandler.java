@@ -18,35 +18,35 @@ import com.rabo.customer.statementProcessor.util.Constants;
 
 @RestController
 @ControllerAdvice
-public class CustomExceptionHandler extends ResponseEntityExceptionHandler{
-	
+public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
+
 	@ExceptionHandler(InternalServerError.class)
-	public final ResponseEntity<Object> handleInternalServerError(Exception ex, WebRequest request){
-		ResponseDetails responseDetails= new ResponseDetails(Constants.INTERNAL_SERVER_ERROR, new ArrayList<>());
-		
-		return new ResponseEntity<>(responseDetails,HttpStatus.INTERNAL_SERVER_ERROR);
+	public final ResponseEntity<Object> handleInternalServerError(Exception ex, WebRequest request) {
+		ResponseDetails responseDetails = new ResponseDetails(Constants.INTERNAL_SERVER_ERROR, new ArrayList<>());
+
+		return new ResponseEntity<>(responseDetails, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
-	
+
 	@ExceptionHandler(BadRequest.class)
-	public final ResponseEntity<Object> handleBadRequest(Exception ex, WebRequest request){
-		ResponseDetails responseDetails= new ResponseDetails(Constants.BAD_REQUEST, new ArrayList<>());
-		
-		return new ResponseEntity<>(responseDetails,HttpStatus.BAD_REQUEST);
+	public final ResponseEntity<Object> handleBadRequest(Exception ex, WebRequest request) {
+		ResponseDetails responseDetails = new ResponseDetails(Constants.BAD_REQUEST, new ArrayList<>());
+
+		return new ResponseEntity<>(responseDetails, HttpStatus.BAD_REQUEST);
 	}
-	
+
 	@Override
-	protected ResponseEntity<Object> handleHttpMessageNotReadable(
-			HttpMessageNotReadableException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
-			ResponseDetails responseDetails= new ResponseDetails(Constants.BAD_REQUEST, new ArrayList<>());
-			
-			return new ResponseEntity<>(responseDetails,HttpStatus.BAD_REQUEST);
+	protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex,
+			HttpHeaders headers, HttpStatus status, WebRequest request) {
+		ResponseDetails responseDetails = new ResponseDetails(Constants.BAD_REQUEST, new ArrayList<>());
+
+		return new ResponseEntity<>(responseDetails, HttpStatus.BAD_REQUEST);
 	}
-	
+
 	@Override
-	protected ResponseEntity<Object> handleHttpRequestMethodNotSupported(
-			HttpRequestMethodNotSupportedException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
-		ResponseDetails responseDetails= new ResponseDetails(Constants.INTERNAL_SERVER_ERROR, new ArrayList<>());
-		
-		return new ResponseEntity<>(responseDetails,HttpStatus.INTERNAL_SERVER_ERROR);
+	protected ResponseEntity<Object> handleHttpRequestMethodNotSupported(HttpRequestMethodNotSupportedException ex,
+			HttpHeaders headers, HttpStatus status, WebRequest request) {
+		ResponseDetails responseDetails = new ResponseDetails(Constants.INTERNAL_SERVER_ERROR, new ArrayList<>());
+
+		return new ResponseEntity<>(responseDetails, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 }
