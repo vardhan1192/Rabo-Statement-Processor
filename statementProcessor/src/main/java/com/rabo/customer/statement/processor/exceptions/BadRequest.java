@@ -1,4 +1,4 @@
-package com.rabo.customer.statementProcessor.exceptions;
+package com.rabo.customer.statement.processor.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

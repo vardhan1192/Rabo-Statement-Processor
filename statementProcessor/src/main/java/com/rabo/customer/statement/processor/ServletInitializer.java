@@ -1,4 +1,4 @@
-package com.rabo.customer.statementProcessor;
+package com.rabo.customer.statement.processor;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

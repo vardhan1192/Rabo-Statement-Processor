@@ -1,4 +1,4 @@
-package com.rabo.customer.statementProcessor.controller;
+package com.rabo.customer.statement.processor.controller;
 
 import java.util.List;
 
@@ -10,10 +10,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rabo.customer.statementProcessor.exceptions.BadRequest;
-import com.rabo.customer.statementProcessor.model.ResponseDetails;
-import com.rabo.customer.statementProcessor.model.StatementRecord;
-import com.rabo.customer.statementProcessor.service.ReferenceAndEndBalValidationService;
+import com.rabo.customer.statement.processor.model.ResponseDetails;
+import com.rabo.customer.statement.processor.model.StatementRecord;
+import com.rabo.customer.statement.processor.service.ReferenceAndEndBalValidationService;
 
 @RestController
 public class ReferenceAndEndBalValidationController {
@@ -22,8 +21,7 @@ public class ReferenceAndEndBalValidationController {
 	private ReferenceAndEndBalValidationService referenceAndEndBalValidationService;
 
 	@GetMapping("/transactions")
-	public ResponseEntity<ResponseDetails> getTransactions(@Valid @RequestBody List<StatementRecord> statementsRecords)
-			throws BadRequest {
+	public ResponseEntity<ResponseDetails> getTransactions(@Valid @RequestBody List<StatementRecord> statementsRecords) {
 
 		return referenceAndEndBalValidationService.getErrorDetails(statementsRecords);
 
