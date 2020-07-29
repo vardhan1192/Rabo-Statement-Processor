@@ -1,4 +1,4 @@
-package com.rabo.customer.statementProcessor;
+package com.rabo.customer.statement.processor;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

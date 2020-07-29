@@ -1,4 +1,4 @@
-package com.rabo.customer.statementProcessor.controller;
+package com.rabo.customer.statement.processor.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -6,9 +6,9 @@ import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rabo.customer.statementProcessor.exceptions.BadRequest;
-import com.rabo.customer.statementProcessor.exceptions.InternalServerError;
-import com.rabo.customer.statementProcessor.util.Constants;
+import com.rabo.customer.statement.processor.exceptions.BadRequest;
+import com.rabo.customer.statement.processor.exceptions.InternalServerError;
+import com.rabo.customer.statement.processor.util.Constants;
 
 @RestController
 public class CustomErrorController implements ErrorController {

@@ -1,4 +1,4 @@
-package com.rabo.customer.statementProcessor.exceptions;
+package com.rabo.customer.statement.processor.exceptions;
 
 import java.util.ArrayList;
 
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import com.rabo.customer.statementProcessor.model.ResponseDetails;
-import com.rabo.customer.statementProcessor.util.Constants;
+import com.rabo.customer.statement.processor.model.ResponseDetails;
+import com.rabo.customer.statement.processor.util.Constants;
 
 @RestController
 @ControllerAdvice

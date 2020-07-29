@@ -1,11 +1,11 @@
-package com.rabo.customer.statementProcessor.service;
+package com.rabo.customer.statement.processor.service;
 
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 
-import com.rabo.customer.statementProcessor.model.ResponseDetails;
-import com.rabo.customer.statementProcessor.model.StatementRecord;
+import com.rabo.customer.statement.processor.model.ResponseDetails;
+import com.rabo.customer.statement.processor.model.StatementRecord;
 
 public interface ReferenceAndEndBalValidationService {
 

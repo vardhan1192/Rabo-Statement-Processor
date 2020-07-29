@@ -1,4 +1,4 @@
-package com.rabo.customer.statementProcessor.controller;
+package com.rabo.customer.statement.processor.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
@@ -19,14 +19,15 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.rabo.customer.statementProcessor.model.ErrorRecord;
-import com.rabo.customer.statementProcessor.model.ResponseDetails;
-import com.rabo.customer.statementProcessor.model.StatementRecord;
-import com.rabo.customer.statementProcessor.service.ReferenceAndEndBalValidationService;
-import com.rabo.customer.statementProcessor.util.Constants;
+import com.rabo.customer.statement.processor.controller.ReferenceAndEndBalValidationController;
+import com.rabo.customer.statement.processor.model.ErrorRecord;
+import com.rabo.customer.statement.processor.model.ResponseDetails;
+import com.rabo.customer.statement.processor.model.StatementRecord;
+import com.rabo.customer.statement.processor.service.ReferenceAndEndBalValidationService;
+import com.rabo.customer.statement.processor.util.Constants;
 
 @WebMvcTest(value = ReferenceAndEndBalValidationController.class)
-public class ReferenceAndEndBalValidationControllerTest {
+class ReferenceAndEndBalValidationControllerTest {
 
 	@Autowired
 	private MockMvc mockMvc;
@@ -35,7 +36,7 @@ public class ReferenceAndEndBalValidationControllerTest {
 	private ReferenceAndEndBalValidationService referenceAndEndBalValidationService;
 
 	@Test
-	public void testGetTransactionsSuccessful() throws Exception {
+	void testGetTransactionsSuccessful() throws Exception {
 
 		ResponseEntity<ResponseDetails> responseEntity = ResponseEntity
 				.ok(new ResponseDetails(Constants.SUCCESSFUL, new ArrayList<>()));
@@ -64,7 +65,7 @@ public class ReferenceAndEndBalValidationControllerTest {
 	}
 
 	@Test
-	public void testGetTransactionsDuplicateRefrerences() throws Exception {
+	void testGetTransactionsDuplicateRefrerences() throws Exception {
 
 		List<ErrorRecord> duplicateReferenceErrorRecord = new ArrayList<>();
 
@@ -99,7 +100,7 @@ public class ReferenceAndEndBalValidationControllerTest {
 	}
 
 	@Test
-	public void testGetTransactionsIncorrectEndBalance() throws Exception {
+	void testGetTransactionsIncorrectEndBalance() throws Exception {
 
 		List<ErrorRecord> endBalaceIncorrectErrorRecord = new ArrayList<>();
 
@@ -132,7 +133,7 @@ public class ReferenceAndEndBalValidationControllerTest {
 	}
 
 	@Test
-	public void testGetTransactionsDuplicaterefrenceAndIncorrectEndBalance() throws Exception {
+	void testGetTransactionsDuplicaterefrenceAndIncorrectEndBalance() throws Exception {
 
 		List<ErrorRecord> allErrorRecords = new ArrayList<>();
 

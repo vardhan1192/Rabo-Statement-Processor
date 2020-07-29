@@ -1,6 +1,10 @@
-package com.rabo.customer.statementProcessor.util;
+package com.rabo.customer.statement.processor.util;
 
 public class Constants {
+
+	private Constants() {
+		throw new IllegalStateException("Utility class");
+	}
 
 	public static final String SUCCESSFUL = "SUCCESSFUL";
 

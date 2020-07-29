@@ -1,4 +1,4 @@
-package com.rabo.customer.statementProcessor.service.impl;
+package com.rabo.customer.statement.processor.service.impl;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -9,21 +9,23 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.ResponseEntity;
-import com.rabo.customer.statementProcessor.model.ErrorRecord;
-import com.rabo.customer.statementProcessor.model.ResponseDetails;
-import com.rabo.customer.statementProcessor.model.StatementRecord;
-import com.rabo.customer.statementProcessor.service.ReferenceAndEndBalValidationService;
-import com.rabo.customer.statementProcessor.util.Constants;
+
+import com.rabo.customer.statement.processor.model.ErrorRecord;
+import com.rabo.customer.statement.processor.model.ResponseDetails;
+import com.rabo.customer.statement.processor.model.StatementRecord;
+import com.rabo.customer.statement.processor.service.ReferenceAndEndBalValidationService;
+import com.rabo.customer.statement.processor.service.impl.ReferenceAndEndBalValidationServiceImpl;
+import com.rabo.customer.statement.processor.util.Constants;
 
 @WebMvcTest(value = ReferenceAndEndBalValidationServiceImpl.class)
-public class ReferenceAndEndBalValidationServiceImplTest {
+class ReferenceAndEndBalValidationServiceImplTest {
 	
 	@Autowired
 	private ReferenceAndEndBalValidationService referenceAndEndBalValidationService;
 	
 
 	@Test
-	public void testGetErrorDetailsForSuccessfulMessage() {
+	void testGetErrorDetailsForSuccessfulMessage() {
 		
 		ResponseEntity<ResponseDetails> expected = ResponseEntity.ok(new ResponseDetails(Constants.SUCCESSFUL, new ArrayList<>()));
 		
@@ -45,7 +47,7 @@ public class ReferenceAndEndBalValidationServiceImplTest {
 	}
 	
 	@Test
-	public void testGetErrorDetailsForDuplicateReferenceMessage() {
+	void testGetErrorDetailsForDuplicateReferenceMessage() {
 		
 		List<ErrorRecord> duplicateReferenceErrorRecord = new ArrayList<>();
 
@@ -75,7 +77,7 @@ public class ReferenceAndEndBalValidationServiceImplTest {
 	}
 	
 	@Test
-	public void testGetErrorDetailsForIncorrectBalanceMessage() {
+	void testGetErrorDetailsForIncorrectBalanceMessage() {
 		
 		List<ErrorRecord> endBalaceIncorrectErrorRecord = new ArrayList<>();
 
@@ -102,7 +104,7 @@ public class ReferenceAndEndBalValidationServiceImplTest {
 	}
 	
 	@Test
-	public void testGetErrorDetailsForDuplicateReferenceAndIncorrectBalanceMessage() {
+	void testGetErrorDetailsForDuplicateReferenceAndIncorrectBalanceMessage() {
 		List<ErrorRecord> allErrorRecords = new ArrayList<>();
 
 		allErrorRecords.add(new ErrorRecord(112806, "NL69ABNA0433647324"));

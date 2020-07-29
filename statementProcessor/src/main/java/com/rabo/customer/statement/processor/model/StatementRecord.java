@@ -1,4 +1,4 @@
-package com.rabo.customer.statementProcessor.model;
+package com.rabo.customer.statement.processor.model;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -23,29 +23,29 @@ public class StatementRecord {
 	private String description;
 
 	@NotNull
-	private double start_Balance;
+	private double startBalance;
 
 	@NotNull
 	private String mutation;
 
 	@NotNull
-	private double end_Balance;
+	private double endBalance;
 
-	public StatementRecord(long reference, String accountNumber, String description, double start_Balance,
-			String mutation, double end_Balance) {
+	public StatementRecord(long reference, String accountNumber, String description, double startBalance,
+			String mutation, double endBalance) {
 		super();
 		this.reference = reference;
 		this.accountNumber = accountNumber;
 		this.description = description;
-		this.start_Balance = start_Balance;
+		this.startBalance = startBalance;
 		this.mutation = mutation;
-		this.end_Balance = end_Balance;
+		this.endBalance = endBalance;
 	}
 
 	@Override
 	public String toString() {
 		return "StatementRecord [reference=" + reference + ", accountNumber=" + accountNumber + ", description="
-				+ description + ", start_Balance=" + start_Balance + ", mutation=" + mutation + ", end_Balance="
-				+ end_Balance + "]";
+				+ description + ", startBalance=" + startBalance + ", mutation=" + mutation + ", endBalance="
+				+ endBalance + "]";
 	}
 }

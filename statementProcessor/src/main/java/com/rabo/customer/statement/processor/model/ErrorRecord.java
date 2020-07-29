@@ -1,4 +1,4 @@
-package com.rabo.customer.statementProcessor.model;
+package com.rabo.customer.statement.processor.model;
 
 import lombok.Data;
 
