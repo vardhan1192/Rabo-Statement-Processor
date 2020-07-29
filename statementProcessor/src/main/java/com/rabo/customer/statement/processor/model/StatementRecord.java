@@ -4,6 +4,8 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -22,13 +24,15 @@ public class StatementRecord {
 
 	private String description;
 
-	@NotNull
+	@JsonProperty("start_Balance")
+	@ApiModelProperty("Leading zeors are not allowed. Leads to Bad Request")
 	private double startBalance;
 
 	@NotNull
 	private String mutation;
 
-	@NotNull
+	@JsonProperty("end_Balance")
+	@ApiModelProperty("Leading zeors are not allowed. Leads to Bad Request")
 	private double endBalance;
 
 	public StatementRecord(long reference, String accountNumber, String description, double startBalance,
