@@ -8,10 +8,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
 @ApiModel
+@AllArgsConstructor
 public class StatementRecord {
 
 	@Max(value = 999999)
@@ -34,22 +36,4 @@ public class StatementRecord {
 	@JsonProperty("end_Balance")
 	@ApiModelProperty("Leading zeors are not allowed. Leads to Bad Request")
 	private double endBalance;
-
-	public StatementRecord(long reference, String accountNumber, String description, double startBalance,
-			String mutation, double endBalance) {
-		super();
-		this.reference = reference;
-		this.accountNumber = accountNumber;
-		this.description = description;
-		this.startBalance = startBalance;
-		this.mutation = mutation;
-		this.endBalance = endBalance;
-	}
-
-	@Override
-	public String toString() {
-		return "StatementRecord [reference=" + reference + ", accountNumber=" + accountNumber + ", description="
-				+ description + ", startBalance=" + startBalance + ", mutation=" + mutation + ", endBalance="
-				+ endBalance + "]";
-	}
 }
