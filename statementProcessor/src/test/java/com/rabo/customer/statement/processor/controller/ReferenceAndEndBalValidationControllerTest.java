@@ -55,7 +55,7 @@ class ReferenceAndEndBalValidationControllerTest {
 		when(referenceAndEndBalValidationService.getErrorDetails(successfulStatementsRecords))
 				.thenReturn(responseEntity);
 
-		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/transactions").accept(MediaType.APPLICATION_JSON)
+		RequestBuilder requestBuilder = MockMvcRequestBuilders.post("/transactions").accept(MediaType.APPLICATION_JSON)
 				.content(mapToJson(successfulStatementsRecords)).contentType(MediaType.APPLICATION_JSON);
 
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
