@@ -6,7 +6,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,7 +20,7 @@ public class ReferenceAndEndBalValidationController {
 	@Autowired
 	private ReferenceAndEndBalValidationService referenceAndEndBalValidationService;
 
-	@GetMapping("/transactions")
+	@PostMapping("/transactions")
 	public ResponseEntity<ResponseDetails> getTransactions(@Valid @RequestBody List<StatementRecord> statementsRecords) {
 
 		return referenceAndEndBalValidationService.getErrorDetails(statementsRecords);
