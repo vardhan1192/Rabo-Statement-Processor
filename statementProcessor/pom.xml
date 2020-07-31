@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.rabo.customer</groupId>
 	<artifactId>statementProcessor</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>v1.0.0</version>
 	<packaging>war</packaging>
 	<name>Rabo Statement Processor</name>
 	<description>Rabo bank Customer Statement Processor</description>
@@ -72,6 +72,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>RaboStatementProcessor</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

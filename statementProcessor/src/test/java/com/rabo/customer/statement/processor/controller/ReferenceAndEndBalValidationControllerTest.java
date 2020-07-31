@@ -89,7 +89,7 @@ class ReferenceAndEndBalValidationControllerTest {
 		when(referenceAndEndBalValidationService.getErrorDetails(duplicateRefrerencesStatementsRecords))
 				.thenReturn(responseEntity);
 
-		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/transactions").accept(MediaType.APPLICATION_JSON)
+		RequestBuilder requestBuilder = MockMvcRequestBuilders.post("/transactions").accept(MediaType.APPLICATION_JSON)
 				.content(mapToJson(duplicateRefrerencesStatementsRecords)).contentType(MediaType.APPLICATION_JSON);
 
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
@@ -123,7 +123,7 @@ class ReferenceAndEndBalValidationControllerTest {
 		when(referenceAndEndBalValidationService.getErrorDetails(incorrectEndBalanceStatementRecords))
 				.thenReturn(responseEntity);
 
-		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/transactions").accept(MediaType.APPLICATION_JSON)
+		RequestBuilder requestBuilder = MockMvcRequestBuilders.post("/transactions").accept(MediaType.APPLICATION_JSON)
 				.content(mapToJson(incorrectEndBalanceStatementRecords)).contentType(MediaType.APPLICATION_JSON);
 
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
@@ -158,7 +158,7 @@ class ReferenceAndEndBalValidationControllerTest {
 		when(referenceAndEndBalValidationService
 				.getErrorDetails(duplicaterefrenceAndIncorrectEndBalanceStatementsRecords)).thenReturn(responseEntity);
 
-		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/transactions").accept(MediaType.APPLICATION_JSON)
+		RequestBuilder requestBuilder = MockMvcRequestBuilders.post("/transactions").accept(MediaType.APPLICATION_JSON)
 				.content(mapToJson(duplicaterefrenceAndIncorrectEndBalanceStatementsRecords))
 				.contentType(MediaType.APPLICATION_JSON);
 
