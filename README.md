@@ -30,7 +30,11 @@ To Run the program (In Eclipse or STS):
 
 Note:
 
-Since the SSL hasn't been configured, please use HTTP when hitting the requests
+1. Since the SSL hasn't been configured, please use HTTP when hitting the requests
+
+2. To view the swagger documentation
+   1. Chrome : Please add any JSON viewer extension to your browser
+   2. Firefox: Will auto beautify the JSON, if used latest version of browser.
 
 
 
