@@ -11,12 +11,6 @@ To Run the program (In Eclipse or STS):
 
 1. Open the IDE and right click in the package explorer and select Import
 
-2. Under Select wizard, select 'Check out Maven Projects from SCM' under Maven.
+2. In the Import wizard, under Git select 'Projects from Git'.
 
-3. In the Traget location wizard, proivde the URL: https://github.com/vardhan1192/Rabo-Statement-Processor.git and click finish 
-
-4. Select the project which is listed and clcik finish.
-
-5. Once the project is imported, right click on the project select Run As -> Spring Boot App
-
-6. For the documentation, please visit http://localhost:8080/processStatement/v2/api-docs
+3. Under Select Repository Source, select 'Clone URI'.
